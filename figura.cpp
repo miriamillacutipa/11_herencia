@@ -45,13 +45,42 @@ void Circulo::mostrar() {
 	cout << "Perimetro: " << calcularPerimetro() << endl;
 }
 
+class Rectangulo : public Figura {
+	private:
+		float base;
+		float altura;
+	public:
+		Rectangulo(string c, float b, float a);
+		float calcularArea();
+		void mostrar();
+};
+
+Rectangulo::Rectangulo(string c, float b, float a) : Figura(c) {
+	base=b;
+	altura=a;
+}
+
+float Rectangulo::calcularArea() {
+	return base*altura;
+}
+
+void Rectangulo::mostrar() {
+	cout << "Color: " << color << endl;
+	cout << "Base: " << base << endl;
+	cout << "Altura: " << altura << endl;
+	cout << "Area: " << calcularArea() << endl;
+}
+
 int main() {
 	cout << fixed << setprecision(2);
 	
 	Circulo circulo("azul", 2);
+	Rectangulo rectangulo("verde", 5, 3);
 	
 	cout << "Circulo" << endl;
 	circulo.mostrar();
+	cout << "\nRectangulo" << endl;
+	rectangulo.mostrar();
 	
 	return 0;
 }
