@@ -79,13 +79,35 @@ void Camion::cambiarCarga(int nuevaCarga) {
 }
 
 int main() { 
-	Vehiculo v("123456", "rojo", "toyota", 50);
-	v.mostrarDatos();
-	cout << endl;
+	Automovil toyota("ABC-123", "rojo", "Toyota", 40, 4, 2);
+	Automovil ferrari("FER-001", "rojo", "Ferrari", 120, 2, 1);
+	Camion volvo("XYZ-789", "blanco", "Volvo", 60, 5000);
 	
+	cout << "DATOS INICIALES" << endl;
+	cout << "\nAutomovil 1" << endl;
+	toyota.mostrarAutomovil();
+	cout << "\nAutomovil 2" << endl;
+	ferrari.mostrarAutomovil();
+	cout << "\nCamion" << endl;
+	volvo.mostrarCamion();
 	
+	toyota.cambiarVelocidad(80);
+	toyota.subirPasajeros(2);
+	toyota.bajarPasajeros(1);
+	ferrari.cambiarVelocidad(250);
+	ferrari.subirPasajeros(1);
+	volvo.cambiarVelocidad(90);
+	volvo.cambiarCarga(8000);
 	
-	return 0; 
+	cout << "\nDATOS DESPUES DE LOS CAMBIOS" << endl;
+	cout << "\nAutomovil 1" << endl;
+	toyota.mostrarAutomovil();
+	cout << "\nAutomovil 2" << endl;
+	ferrari.mostrarAutomovil();
+	cout << "\nCamion" << endl;
+	volvo.mostrarCamion();
+	
+	return 0;
 }
 
 
